@@ -1,72 +1,91 @@
+<!-- กำหนดประเภทเอกสาร HTML5 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- เริ่มต้นหน้า HTML และกำหนดภาษาของเอกสารเป็นภาษาอังกฤษ -->
+
 <head>
+    <!-- กำหนดการเข้ารหัสเป็น UTF-8 รองรับภาษาไทยและพิเศษ -->
     <meta charset="UTF-8">
+    <!-- กำหนดให้เว็บไซต์แสดงผลได้ดีบนอุปกรณ์มือถือ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- เรียกใช้งาน Font Awesome เพื่อแสดงไอคอน (เวอร์ชัน 6.6.0) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- เรียกใช้ไฟล์ CSS ภายนอกสำหรับตกแต่งหน้าเว็บ -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- ชื่อของหน้าเว็บที่แสดงบนแท็บของเบราว์เซอร์ -->
     <title>Modern Login Page | MildProg</title>
 </head>
+
 <body>
-    
+    <!-- กล่องหลักของระบบ Login/Register ทั้งหมด -->
     <div class="container" id="container">
+
+        <!-- ฟอร์มลงทะเบียนผู้ใช้ใหม่ -->
         <div class="form-container sign-up">
             <form action="">
                 <h1>Create Account</h1>
+                <!-- ไอคอนโซเชียลสำหรับการสมัครผ่าน Social Login -->
                 <div class="social-icon">
-                    <a href="#" class="icon">
-                        <i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon">
-                        <i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon">
-                        <i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon">
-                        <i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
+                <!-- ข้อความแจ้งว่าสามารถสมัครด้วยอีเมล -->
                 <span>or use your email for registeration</span>
-                <input type="text" name="" id="" placeholder="Name">
-                <input type="email" name="" id="" placeholder="Email">
-                <input type="password" name="" id="" placeholder="password">
-                <button>Sign Up</button>
+                <!-- ช่องกรอกชื่อ อีเมล และรหัสผ่าน -->
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="password">
+                <button>Sign Up</button> <!-- ปุ่มสมัครสมาชิก -->
             </form>
         </div>
+
+        <!-- ฟอร์มเข้าสู่ระบบผู้ใช้เดิม -->
         <div class="form-container sign-in">
             <form action="">
                 <h1>Sign In</h1>
+                <!-- ไอคอนโซเชียลสำหรับการเข้าสู่ระบบผ่าน Social Login -->
                 <div class="social-icon">
-                    <a href="#" class="icon">
-                        <i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon">
-                        <i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon">
-                        <i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon">
-                        <i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
+                <!-- ข้อความแจ้งว่าสามารถเข้าสู่ระบบด้วยอีเมลและรหัสผ่าน -->
                 <span>or use your email password</span>
-                <input type="email" name="" id="" placeholder="Email">
-                <input type="password" name="" id="" placeholder="password">
-                <a href="#">Forget Your Password</a>
-                <button>Sign In</button>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="password">
+                <a href="#">Forget Your Password</a> <!-- ลิงก์สำหรับลืมรหัสผ่าน -->
+                <button>Sign In</button> <!-- ปุ่มเข้าสู่ระบบ -->
             </form>
         </div>
+
+        <!-- ส่วนของการสลับหน้าระหว่าง Sign In / Sign Up -->
         <div class="toggle-container">
             <div class="toggle">
+
+                <!-- แผงด้านซ้าย แสดงเมื่อผู้ใช้ต้องการเข้าสู่ระบบ -->
                 <div class="toggle-panel toggle-left">
                     <h1>Welcome Back!</h1>
                     <p>Enter your personal detail to use all site features</p>
                     <button class="hidden" id="login">Sign In</button>
                 </div>
+
+                <!-- แผงด้านขวา แสดงเมื่อผู้ใช้ต้องการสมัครสมาชิก -->
                 <div class="toggle-panel toggle-right">
                     <h1>Hello, Friend!</h1>
                     <p>Register with your personal detail to use all site features</p>
                     <button class="hidden" id="register">Sign Up</button>
                 </div>
+
             </div>
         </div>        
     </div>
 
-
+    <!-- เรียกใช้งาน JavaScript ภายนอก สำหรับจัดการการสลับหน้าฟอร์ม -->
     <script src="script.js"></script>
 </body>
 </html>
